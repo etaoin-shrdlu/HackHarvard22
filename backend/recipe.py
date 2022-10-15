@@ -19,4 +19,7 @@ class Recipe:
         self.tags = [
 
         ]
+    
+    def __str__(self):
+        return str(self.name) + ': "' + str(self.description) + '"'
 

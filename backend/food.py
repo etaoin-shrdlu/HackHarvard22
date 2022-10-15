@@ -47,6 +47,14 @@ class Recipe_Categories(Enum):
             'Dessert': 3
         }
         return lookup_table[name]
+
+    def __str__(self):
+        lookup_table = {
+            'All': 0,
+            'Entree': 1,
+            'Sides': 2,
+            'Dessert': 3
+        }
     
     ALL = 0
     ENTREE = 1

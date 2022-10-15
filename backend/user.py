@@ -1,6 +1,7 @@
 from recipe import Recipe
 from enum import Enum
 from database import Database
+ALL_RECIPIES = Database().recipies
 
 from food import Restriction_Categories, Recipe_Categories
 
@@ -17,7 +18,7 @@ class User:
 
     def get_priority(self, recipe : Recipe) -> float:
         
-        if any(restriction in recipe for restriction in self.restrictions_strict):
+        if any(restriction in recipe.allergens for restriction in self.restrictions_strict):
             return -2.0
         if (recipe.category != self.recipe_category) and (self.recipe_category != Recipe_Categories.ALL):
             return -1.0
@@ -38,9 +39,9 @@ class User:
 
     def update_recipe_prefs(self):
         if self.recipe_category == Recipe_Categories.ALL:
-            self.recipies_sorted = sorted(Database.ALL_RECIPIES, key=lambda recipe : self.get_priority(recipe))
+            self.recipies_sorted = sorted(ALL_RECIPIES, key=lambda recipe : self.get_priority(recipe))
         else:
-            self.recipies_sorted = sorted((recipe for recipe in Database.ALL_RECIPIES if self.recipe_category == recipe.category), key=lambda recipe : self.get_priority(recipe))
+            self.recipies_sorted = sorted((recipe for recipe in ALL_RECIPIES if self.recipe_category == recipe.category), key=lambda recipe : self.get_priority(recipe))
 
     def get_recipies(self):
         """ Get the recipies of highest priority for a given user's preferences
