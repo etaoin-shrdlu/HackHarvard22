@@ -4,22 +4,32 @@ from recipe import Recipe
 from food import Recipe_Categories, Restriction_Categories
 
 class Database:
-    def recipe_generator():
-        recipies_file = csv.reader('recipies.csv')
-        next(recipies_file) # Skip the first line
-        for recipe in recipies_file:
-            yield Recipe(
-                name=recipe[0],
-                allergens=Restriction_Categories(recipe[1]),
-                description=recipe[2],
-                imgs=..., #TODO
-                ingredients=recipe[3][1:-1].split(';'),
-                directions=recipe[4][1:-1].replace(';', '\n'),
-                calories=int(recipe[5]),
-                prep_time=int(recipe[6]),
-                category=Recipe_Categories(recipe[7]),
-                cuisine=recipe[8],
-                skill=recipe[9]
-            )
-            
-    ALL_RECIPIES = [recipe for recipe in recipe_generator]
+    def __init__(self):
+        return
+
+    def recipe_generator(self):
+        with open('recipes.csv') as f:
+            recipies_file = csv.reader(f)
+            print(next(recipies_file)) # Skip the first line
+            for recipe in recipies_file:
+                print(recipe)
+                yield Recipe(
+                    name=recipe[0],
+                    allergens=Restriction_Categories.strs_to_enum(recipe[1]),
+                    description=recipe[2],
+                    imgs=..., #TODO
+                    ingredients=recipe[3][1:-1].split(';'),
+                    directions=recipe[4][1:-1].replace(';', '\n'),
+                    calories=int(recipe[5]),
+                    prep_time=int(recipe[6]),
+                    category=Recipe_Categories.str_to_enum(recipe[7]),
+                    cuisine=recipe[8],
+                    skill=recipe[9]
+                )
+                
+        #ALL_RECIPIES = [recipe for recipe in self.recipe_generator()]
+
+if __name__ == '__main__':
+    d = Database()
+    for x in d.recipe_generator():
+        print(x)

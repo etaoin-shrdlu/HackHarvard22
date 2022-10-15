@@ -1,7 +1,8 @@
 from enum import Enum
 
 class Restriction_Categories():
-    def __init__(self, name : str):
+    @staticmethod
+    def str_to_enum(name : str):
         lookup_table = {
             'Dairy': 1,
             'Egg': 2,
@@ -16,6 +17,10 @@ class Restriction_Categories():
             'Red Meat': 11
         }
         return lookup_table[name]
+
+    @staticmethod
+    def strs_to_enum(names : str):
+        return [Restriction_Categories.str_to_enum(name.strip()) for name in names.split(';')]
     
     UNKOWN = -1
     
@@ -31,11 +36,22 @@ class Restriction_Categories():
     GLUTEN = 10
     RED_MEAT = 11 # always extends MEAT
 
+
 class Recipe_Categories(Enum):
+    @staticmethod
+    def str_to_enum(name : str):
+        lookup_table = {
+            'All': 0,
+            'Entree': 1,
+            'Sides': 2,
+            'Dessert': 3
+        }
+        return lookup_table[name]
+    
     ALL = 0
-    ENTREES = 1
-    SIDES = 2
-    DESSERTS =3
+    ENTREE = 1
+    SIDE = 2
+    DESSERT =3
 
 class Ingredient:
     def __init__(self, name : str, allergens):

@@ -1,6 +1,6 @@
 from recipe import Recipe
 from enum import Enum
-from main import Database
+from database import Database
 
 from food import Restriction_Categories, Recipe_Categories
 
