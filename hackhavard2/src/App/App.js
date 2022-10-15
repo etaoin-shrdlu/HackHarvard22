@@ -7,7 +7,7 @@ import Questions from '../Questions/Questions';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import Cards from '../Cards/Cards';
+import Entrees from '../Entrees/Entrees';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
@@ -32,8 +32,11 @@ function App() {
       <Header />
       <Router>
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/question" element={<Questions />} />
-          <Route path="/" element={<Cards />} />
+          <Route path="/Entrees" element={<Entrees />} />
+          <Route path="Sides" element={<Sides />} />
+          <Route path="Desserts" element={<Desserts />} />
         </Routes>
       </Router>
     </div>
