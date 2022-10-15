@@ -1,13 +1,13 @@
-from tkinter import image_names
-
 from user import User
+from food import Recipe_Categories, Restriction_Categories
 
 if __name__ == '__main__':
-    me : User = User(
-        restrictions_strict=['Egg','Dairy'],
-        restrictions_preference=[],
-        skill_level=0
+    user : User = User(
+        restrictions=[Restriction_Categories.EGG],
+        cuisine=None
     )
-    for recipe in me.get_recipies():
+    for recipe in user.get_recipies():
         print(recipe)
+
+
 
