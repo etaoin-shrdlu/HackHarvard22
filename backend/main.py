@@ -5,6 +5,12 @@ class Database:
     ALL_RECIPIES = [
         Recipe()
     ]
+    DESSERT_RECIPIES = [
+        
+    ]
+    ENTREE_RECIPIES = [
+
+    ]
 
 
 
@@ -24,6 +30,4 @@ r.get_priority(u.prefs)
 
 
 if __name__ == '__main__':
-    u = User(prefs)
-    
-    get_recipies()
+    pass

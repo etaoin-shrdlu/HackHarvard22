@@ -10,9 +10,3 @@ class Recipe:
         self.ratings = []
 
         self.tags = []
-
-    def get_priority(self, user : User) -> float:
-        
-        
-        
-        return priority
