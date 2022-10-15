@@ -13,4 +13,7 @@ class Recipe:
         
         self.rating = 5.0
 
-        self.tags = []
+        self.tags = [
+            
+        ]
+

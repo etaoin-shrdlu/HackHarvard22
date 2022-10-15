@@ -8,16 +8,9 @@ class Database:
 
 
 
-r = Recipe()
-u = User()
-
-u.get_recipies()
-
-r.get_priority(u.prefs)
-
-
 
 
 
 if __name__ == '__main__':
-    pass
+    r = Recipe()
+    u = User()

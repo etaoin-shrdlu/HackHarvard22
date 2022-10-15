@@ -5,11 +5,14 @@ from main import Database
 from food import Restriction_Categories, Recipe_Categories
 
 class User:
-    def __init__(self, restrictions_strict : list(Restriction_Categories), restrictions_preference : list(Restriction_Categories), **kwargs : ...):
-        
+    def __init__(self, restrictions_strict : list(Restriction_Categories), restrictions_preference : list(Restriction_Categories), skill_level : int, **kwargs : ...):
+        """TODO: Pull from Firebase
+        """
         self.restrictions_strict = restrictions_strict
         self.restrictions_preference = restrictions_preference
-        self.recipe_catogry = None
+        self.recipe_category = Recipe_Categories.ALL
+        self.skill_level = 0
+        self.saved_recipies = []
         self.update_recipe_prefs()
 
     def get_priority(self, recipe : Recipe) -> float:
@@ -23,16 +26,19 @@ class User:
         
         return priority
 
-    def update_recipe_prefs(self, category=Recipe_Categories.ALL):
-        if category == Recipe_Categories.ALL:
+    def update_recipe_prefs(self):
+        if self.recipe_category == Recipe_Categories.ALL:
             self.recipies_sorted = sorted(Database.ALL_RECIPIES, key=lambda recipe : self.get_priority(recipe))
         else:
-            self.recipies_sorted = sorted((recipe for recipe in Database.ALL_RECIPIES if category == recipe.category), key=lambda recipe : self.get_priority(recipe))
+            self.recipies_sorted = sorted((recipe for recipe in Database.ALL_RECIPIES if self.recipe_category == recipe.category), key=lambda recipe : self.get_priority(recipe))
 
-    def get_recipies():
+    def get_recipies(self):
         """ Get the recipies of highest priority for a given user's preferences
         """
-        max_recipe_priority = -1
+        for recipe in self.recipies_sorted:
+            yield recipe
+
+    
         
         
         
