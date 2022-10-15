@@ -1,8 +1,9 @@
-recipies = [...]
+import Recipe from recipe
 
-class Recipe:
-    def __init__(self, **kwargs : ...):
-        
+recipies = [
+
+]
+
 
 
 class User:
@@ -14,21 +15,30 @@ class User:
         """ Get the recipies of highest priority for a given user's preferences
         """
         max_recipe_priority = -1
-        for recipe in recipies:
+        
+        """for recipe in recipies:
             recipe_priority = get_priority(recipe)
             if recipe_priority > max_recipe_priority
                 max_recipe_priority = recipe_priority
-                 
+        """     
 
 
-        pass
+class Recipe:
+    def get_priority(self, **kwargs : ... ) -> float:
+        priority = self.ingredients
+        
+        
+        return priority
 
 
+r = Recipe()
+u = User()
 
-def get_priority( **kwargs : ... ) -> float:
-    pass
+u.get_recipies()
 
- 
+r.get_priority(u.prefs)
+
+
 
 
 
