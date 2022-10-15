@@ -22,9 +22,13 @@ class User:
             return -2.0
         if (recipe.category != self.recipe_category) and (self.recipe_category != Recipe_Categories.ALL):
             return -1.0
-        return 10.0
         
-        """
+        if(self.cuisine != None):
+            if (recipe.cuisine == self.cuisine):
+                priority = 5.0
+            else:
+                priority = 3.0
+
         if (recipe.cuisine == ):
             priority = 5.0
         elif (recipe.cuisine == 'General'):
@@ -35,7 +39,6 @@ class User:
         priority *= recipe.rating
         
         return priority
-        """
 
     def update_recipe_prefs(self):
         if self.recipe_category == Recipe_Categories.ALL:
