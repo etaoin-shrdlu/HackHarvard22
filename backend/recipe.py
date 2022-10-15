@@ -1,4 +1,3 @@
-from re import S
 from food import Restriction_Categories, Recipe_Categories
 
 class Recipe:
