@@ -24,7 +24,8 @@ class User:
         
         return priority
 
-    def update_recipe_prefs(self):
+    def update_recipe_prefs(self, category=None):
+        
         self.recipies_sorted = sorted(Database.ALL_RECIPIES, key=lambda recipe : self.get_priority(recipe))
 
     def get_recipies():

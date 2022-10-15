@@ -5,16 +5,6 @@ class Database:
     ALL_RECIPIES = [
         Recipe()
     ]
-    DESSERT_RECIPIES = [
-        
-    ]
-    ENTREE_RECIPIES = [
-
-    ]
-
-
-
-
 
 
 
