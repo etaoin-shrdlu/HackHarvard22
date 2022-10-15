@@ -1,14 +1,13 @@
 import './App.css';
 import React from 'react';
-import Header from './Header';
+import Header from '../Header/Header';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Questions from './Questions';
-import TinderCards from './TinderCards';
-import ErrorBoundary from './ErrorBoundary';
+import Questions from '../Questions/Questions';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import Cards from '../Cards/Cards';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
@@ -34,11 +33,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/question" element={<Questions />} />
-          <Route path="/" element={
-            <ErrorBoundary>
-              <TinderCards />
-            </ErrorBoundary>
-          } />
+          <Route path="/" element={<Cards />} />
         </Routes>
       </Router>
     </div>
