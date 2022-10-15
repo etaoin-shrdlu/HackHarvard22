@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Desserts() {
+function Dessert() {
     return (
         <div>
             <h1>Desserts</h1>
@@ -8,4 +8,4 @@ function Desserts() {
     );
 }
 
-export default Desserts;
+export default Dessert;

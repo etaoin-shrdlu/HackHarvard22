@@ -8,6 +8,11 @@ import Questions from '../Questions/Questions';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import Entrees from '../Entrees/Entrees';
+import Desserts from '../Dessert/Dessert';
+import LandingPage from '../LandingPage/LandingPage';
+import Appetizers from '../Appetizers/Appetizers';
+import AllType from '../AllType/AllType';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
@@ -34,9 +39,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/question" element={<Questions />} />
-          <Route path="/Entrees" element={<Entrees />} />
-          <Route path="Sides" element={<Sides />} />
-          <Route path="Desserts" element={<Desserts />} />
+          <Route path="/entrees" element={<Entrees />} />
+          <Route path="/appetizers" element={<Appetizers />} />
+          <Route path="/desserts" element={<Desserts />} />
+          <Route path="/all" element={<AllType />} />
         </Routes>
       </Router>
     </div>

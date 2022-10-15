@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Sides() {
+function AllType() {
     return (
         <div>
-            <h1>Sides</h1>
+            <h1>All</h1>
         </div>
     );
 }
 
-export default Sides;
+export default AllType;

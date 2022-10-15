@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import picture from '../logo.png';
-import picture2 from '../elon.png';
 import './Entrees.css';
 
 function Entrees() {
@@ -24,7 +23,7 @@ function Entrees() {
                     {recipes.map((recipe) => (
 
                         <div
-                            className="card"
+                            className="card_entrees"
                             style={{ backgroundImage: `url(${recipe.url})` }}
                             key={recipe.name}
                         >
