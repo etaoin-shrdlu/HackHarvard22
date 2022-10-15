@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Restriction_Categories(Enum):
+class Restriction_Categories():
     def __init__(self, name : str):
         lookup_table = {
             'Dairy': 1,
@@ -16,6 +16,7 @@ class Restriction_Categories(Enum):
             'Red Meat': 11
         }
         return lookup_table[name]
+    
     UNKOWN = -1
     
     DAIRY = 1
@@ -37,7 +38,7 @@ class Recipe_Categories(Enum):
     DESSERTS =3
 
 class Ingredient:
-    def __init__(self, name : str, allergens : list(Restriction_Categories)):
+    def __init__(self, name : str, allergens):
         self.name = name
         if Restriction_Categories.MEAT not in allergens and Restriction_Categories.RED_MEAT in allergens:
             allergens += Restriction_Categories.MEAT
