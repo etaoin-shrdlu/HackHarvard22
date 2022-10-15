@@ -1,18 +1,19 @@
 from user import User
+from food import Restriction_Categories, Recipe_Categories
 
 class Recipe:
-    def __init__(self, description : str, imgs, ingredients, directions, calories):
+    def __init__(self, name : str, description : str, imgs, ingredients, directions, calories, category : Recipe_Categories):
+        self.name = name
         self.description = description
         self.imgs = imgs
         self.ingredients = ingredients
         self.directions = directions
         self.calories = calories
-        self.ratings = []
+        self.category = category
+        
+        self.rating = 5.0
 
-        self.tags = []
+        self.tags = [
+            
+        ]
 
-    def get_priority(self, user : User) -> float:
-        
-        
-        
-        return priority
