@@ -1,8 +1,11 @@
 from recipe import Recipe
+from fractions import Fraction
 
 class User:
     def __init__(self, **kwargs : ...):
         
+
+
         pass
 
     def get_recipies():
