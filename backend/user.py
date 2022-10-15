@@ -6,13 +6,12 @@ ALL_RECIPIES = Database().recipies
 from food import Restriction_Categories, Recipe_Categories
 
 class User:
-    def __init__(self, restrictions_strict, restrictions_preference, skill_level : int):
+    def __init__(self, restrictions, cuisine):
         """TODO: Pull from Firebase
         """
         self.restrictions = restrictions
         self.cuisine = cuisine
         self.recipe_category = Recipe_Categories.ALL
-        self.skill_level = 0
         self.saved_recipies = []
         self.update_recipe_prefs()
 
@@ -28,12 +27,6 @@ class User:
                 priority = 5.0
             else:
                 priority = 3.0
-
-        if (recipe.cuisine == ):
-            priority = 5.0
-        elif (recipe.cuisine == 'General'):
-
-        priority = 
 
         priority -= sum(restriction in recipe for restriction in self.restrictions_preference)
         priority *= recipe.rating
