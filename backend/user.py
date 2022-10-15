@@ -17,9 +17,17 @@ class User:
 
     def get_priority(self, recipe : Recipe) -> float:
         if any(restriction in recipe for restriction in self.restrictions_strict):
+            return -2.0
+        if (recipe.category != self.recipe_category) and (self.recipe_category != Recipe_Categories.ALL):
             return -1.0
         
-        priority = 10.0
+        
+
+        if (recipe.cuisine == ):
+            priority = 5.0
+        elif (recipe.cuisine == 'General'):
+
+        priority = 
 
         priority -= sum(restriction in recipe for restriction in self.restrictions_preference)
         priority *= recipe.rating

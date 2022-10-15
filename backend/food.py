@@ -2,7 +2,20 @@ from enum import Enum
 
 class Restriction_Categories(Enum):
     def __init__(self, name : str):
-        pass#return Restriction_Categories.
+        lookup_table = {
+            'Dairy': 1,
+            'Egg': 2,
+            'Fish': 3,
+            'Shellfish': 4,
+            'Tree Nuts': 5,
+            'Peanuts': 6,
+            'Wheat': 7,
+            'Soy': 8,
+            'Meat': 9,
+            'Gluten': 10,
+            'Red Meat': 11
+        }
+        return lookup_table[name]
     UNKOWN = -1
     
     DAIRY = 1

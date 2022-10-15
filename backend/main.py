@@ -15,9 +15,13 @@ class Database:
                 allergens=Restriction_Categories(recipe[1]),
                 description=recipe[2],
                 imgs=..., #TODO
-                ingredients=recipe[3],
-                directions=recipe[4],
-
+                ingredients=recipe[3][1:-1].split(';'),
+                directions=recipe[4][1:-1].replace(';', '\n'),
+                calories=int(recipe[5]),
+                prep_time=int(recipe[6]),
+                category=Recipe_Categories(recipe[7]),
+                cuisine=recipe[8],
+                skill=recipe[9]
             )
             
     ALL_RECIPIES = [recipe for recipe in recipe_generator]
