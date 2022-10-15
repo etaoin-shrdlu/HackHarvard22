@@ -40,26 +40,27 @@ class Restriction_Categories():
 class Recipe_Categories(Enum):
     @staticmethod
     def str_to_enum(name : str):
-        lookup_table = {
-            'All': 0,
-            'Entree': 1,
-            'Sides': 2,
-            'Dessert': 3
+        lookup_table = { #CSV file format to enum
+            'All': Recipe_Categories.ALL,
+            'Entree': Recipe_Categories.ENTREE,
+            'Sides': Recipe_Categories.SIDE,
+            'Dessert': Recipe_Categories.DESSERT
         }
         return lookup_table[name]
 
     def __str__(self):
-        lookup_table = {
-            'All': 0,
-            'Entree': 1,
-            'Sides': 2,
-            'Dessert': 3
+        lookup_table = { #Enum to Frontend display string
+            Recipe_Categories.ALL: 'All',
+            Recipe_Categories.ENTREE: 'Entree',
+            Recipe_Categories.SIDE: 'Appetizer',
+            Recipe_Categories.DESSERT: 'Dessert'
         }
-    
+        return lookup_table[self]
+
     ALL = 0
     ENTREE = 1
     SIDE = 2
-    DESSERT =3
+    DESSERT = 3
 
 class Ingredient:
     def __init__(self, name : str, allergens):
