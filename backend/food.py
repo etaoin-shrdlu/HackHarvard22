@@ -1,6 +1,8 @@
 from enum import Enum
 
 class Restriction_Categories(Enum):
+    def __init__(self, name : str):
+        pass#return Restriction_Categories.
     UNKOWN = -1
     
     DAIRY = 1
