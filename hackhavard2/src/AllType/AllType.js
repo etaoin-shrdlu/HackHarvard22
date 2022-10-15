@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Questions() {
+function AllType() {
     return (
         <div>
-            <h1>Questions</h1>
+            <h1>All</h1>
         </div>
     );
 }
 
-export default Questions;
+export default AllType;

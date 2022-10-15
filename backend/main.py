@@ -1,6 +1,5 @@
-from tkinter import image_names
-
 from user import User
+from food import Recipe_Categories, Restriction_Categories
 
 # if __name__ == '__main__':
 #     me : User = User(
@@ -10,6 +9,3 @@ from user import User
 #     )
 #     for recipe in me.get_recipies():
 #         print(recipe)
-
-
-
