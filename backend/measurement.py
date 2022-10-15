@@ -17,7 +17,7 @@ class Measurement:
         self.units = units
 
     def __str__(self):
-        return str(self.num) + self.units.name
+        return str(self.n) + self.units.name
         
 
     #def get_amount(self):
