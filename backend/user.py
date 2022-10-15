@@ -5,29 +5,22 @@ from main import Database
 from food import Restriction_Categories, Recipe_Categories
 
 class User:
-    def __init__(self, restrictions_strict : list(Restriction_Categories), restrictions_preference : list(Restriction_Categories), skill_level : int, **kwargs : ...):
+    def __init__(self, restrictions : list(Restriction_Categories), cuisine : list(Restriction_Categories), skill_level : int, **kwargs : ...):
         """TODO: Pull from Firebase
         """
-        self.restrictions_strict = restrictions_strict
-        self.restrictions_preference = restrictions_preference
+        self.restrictions = restrictions
+        self.cuisine = cuisine
         self.recipe_category = Recipe_Categories.ALL
         self.skill_level = 0
         self.saved_recipies = []
         self.update_recipe_prefs()
 
     def get_priority(self, recipe : Recipe) -> float:
-        if any(restriction in recipe for restriction in self.restrictions_strict):
+        if any(restriction in recipe for restriction in self.restrictions):
             return -2.0
         if (recipe.category != self.recipe_category) and (self.recipe_category != Recipe_Categories.ALL):
             return -1.0
         
-        
-
-        if (recipe.cuisine == ):
-            priority = 5.0
-        elif (recipe.cuisine == 'General'):
-
-        priority = 
 
         priority -= sum(restriction in recipe for restriction in self.restrictions_preference)
         priority *= recipe.rating
