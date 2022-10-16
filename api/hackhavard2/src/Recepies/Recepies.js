@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import picture from '../logo.png';
 import './Recepies.css';
+import {useLocation} from "react-router-dom";
 
 function Recepies() {
     const [recipes, setRecipes] = useState([
@@ -15,6 +16,35 @@ function Recepies() {
             level: "easy",
         },
     ]);
+
+    const BACKEND_URL = 'http://127.0.0.1:8000/';
+
+
+    const search = useLocation().search;
+    let cuisine = new URLSearchParams(search).get('cuisine');
+    let meal_category = new URLSearchParams(search).get('meal');
+
+    console.log(cuisine);
+    console.log(meal_category)
+
+    let url_data = fetch(BACKEND_URL, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+            "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+            'cuisine': cuisine,
+            'meal': meal_category
+        }), // body data type must match "Content-Type" header
+    });
+
+
 
     return (
         <>
