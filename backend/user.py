@@ -48,10 +48,3 @@ class User:
         """
         for recipe in self.recipies_sorted:
             yield recipe
-
-    
-        
-        
-        
-        
-
