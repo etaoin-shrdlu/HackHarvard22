@@ -21,7 +21,7 @@ class Database:
                     name = recipe[0],
                     allergens = Restriction_Categories.strs_to_enum(recipe[1]),
                     description = recipe[2],
-                    imgs = [],
+                    imgs = [recipe[0].replace(" ", "").lower() + '_' + i for i in range(1,2)],
                     ingredients = recipe[3][1:-1].split(';'),
                     directions = recipe[4][1:-1].replace(';', '\n'),
                     calories = int(recipe[5]),
@@ -30,11 +30,6 @@ class Database:
                     cuisine = recipe[8],
                     skill = recipe[9]
                 )
-                imgname = Recipe.name.replace(" ", "").lower() + "_"
-                i = 1
-                while exists(imgname + str(i)):
-                    Recipe.imgs.append(imgname + str(i))
-                    i += 1
 
 class DatabaseConstants:
     ALL_RECIPIES = Database().recipies
