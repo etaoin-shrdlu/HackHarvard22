@@ -4,7 +4,6 @@ import salad from '../salad2.png';
 import './LandingPage.css';
 
 function LandingPage() {
-
     let countries = [{ label: 'Indian', value: 'indian' }, { label: 'America', value: 'america' }, { label: 'Vietnamese', value: 'vietnamese' }, { label: 'Mexican', value: 'mexican' }];
     let [country, setCountry] = useState("Select cruisne");
     const [data, setData] = useState([]);
@@ -48,6 +47,10 @@ function LandingPage() {
                     }
                 </select>
             </div>
+            <div className='search__btn'>
+                <button>Search</button>
+            </div>
+
         </>
     );
 }

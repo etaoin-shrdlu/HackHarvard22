@@ -59,3 +59,10 @@
     align-items: center;
     margin: 2rem;
 }
+
+.search__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
