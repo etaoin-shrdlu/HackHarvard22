@@ -21,7 +21,7 @@ class Database:
                     name = recipe[0],
                     allergens = Restriction_Categories.strs_to_enum(recipe[1]),
                     description = recipe[2],
-                    imgs = [recipe[0].replace(" ", "").lower() + '_' + i for i in range(1,2)],
+                    imgs = [recipe[0].replace(" ", "").lower() + '_' + str(i) for i in range(1,2)],
                     ingredients = recipe[3][1:-1].split(';'),
                     directions = recipe[4][1:-1].replace(';', '\n'),
                     calories = int(recipe[5]),
