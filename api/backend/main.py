@@ -3,7 +3,7 @@ import json
 
 from backend.user import User
 from backend.food import Recipe_Categories, Restriction_Categories
-
+from backend.recipe import Recipe
 import firebase_admin
 from firebase_admin import credentials, firestore
 
@@ -34,7 +34,7 @@ def main():
 
 class RequestHandler():
     def __init__(self):
-        cred = credentials.Certificate("serviceAccountKey.json")
+        cred = credentials.Certificate("backend/serviceAccountKey.json")
         #TODO: generate new private keys after end of Hackathon to maintain security
         self.app = firebase_admin.initialize_app(cred, name='request_handler')
         self.db = firestore.client(self.app)
@@ -60,18 +60,21 @@ class RequestHandler():
 
                 username: "username"
                 category: "..."
-                cuisine_preference: "..."
+                cuisine: "..."
 
             returns the next recipe this user would have to view as a dictionary ? JSON object ?
         """
         username = request['username']
         user : User = self.user(username)
         category = request['category']
-        cuisine_preference = request['cuisine_preference']
+        cuisine_preference = request['cuisine']
         if username not in self.user_recipes:
             self.user_recipes[username] = user.get_recipies()
         
-        return next(self.user_recipes[username])
+        try:
+            return next(self.user_recipes[username])
+        except StopIteration:
+            return None
 
         
     def addUser(self, username, name, email, restrictions):

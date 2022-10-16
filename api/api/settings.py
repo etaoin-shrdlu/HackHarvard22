@@ -25,7 +25,22 @@ SECRET_KEY = 'django-insecure-mm!%kldr@79t%11a(+j02gy7a$*stv_*n=_f#$0)y7$^^4+_9l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://localhost:3000',
+    '127.0.0.1'
+]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000'
+]
+
+CORS_REPLACE_HTTPS_REFERER = True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
 
 
 # Application definition
@@ -68,6 +83,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'api.wsgi.application'
+
 
 
 # Database

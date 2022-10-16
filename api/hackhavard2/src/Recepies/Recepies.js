@@ -27,11 +27,12 @@ function Recepies() {
     console.log(cuisine);
     console.log(meal_category)
 
-    let url_data = fetch(BACKEND_URL, {
+    let url_data = null;
+    fetch(BACKEND_URL, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "no-cors", // no-cors, cors, *same-origin
+        mode: "cors", // no-cors, cors, *same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
+        credentials: "include", // include, *same-origin, omit
         headers: {
             "Content-Type": "application/json",
             // "Content-Type": "application/x-www-form-urlencoded",
@@ -41,9 +42,14 @@ function Recepies() {
         body: JSON.stringify({
             'cuisine': cuisine,
             'meal': meal_category
-        }), // body data type must match "Content-Type" header
+        })
+    }).then((response) => {
+        url_data = response
+        console.log('SUCCESS')
+        console.log(url_data)
     });
 
+    
 
 
     return (
