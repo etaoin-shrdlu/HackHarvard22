@@ -54,7 +54,7 @@ function LandingPage() {
                     img={desserts}
                     title='Desserts'
                     onclick={setMealCategory('dessert')}
-                    description='Desserts are the sweet ending to a meal. They are meant to be enjoyed after a meal, and are usually the most caloric part of a meal'
+                    description='Desserts are the sweet ending to a meal. They are meant to be enjoyed after a meal, and are usually the most caloric part of a meal.'
                 />
             </div>
             <div className='crusine__selection'>

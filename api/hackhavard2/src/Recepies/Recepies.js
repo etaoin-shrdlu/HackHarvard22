@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import picture from '../strawberry.png';
 import './Recepies.css';
 import { useLocation } from "react-router-dom";
+import skill_icon from '../skill-icon.png';
+import time_icon from '../clock-icon.png';
+import kcal_icon from '../calories-icon.png';
 
 var recipes; //last-minute change
 
 function Recepies() {
-    /*let [recipes, setRecipes] = useState([
+    /*
+    let [recipes, setRecipes] = useState([
         {
             name: "Strawberry Cheesecake",
             url: picture,
@@ -17,7 +21,8 @@ function Recepies() {
             calories: 400,
             level: "easy",
         },
-    ]);*/
+    ]);
+    */
 
     const BACKEND_URL = 'http://127.0.0.1:8000/';
 
@@ -36,9 +41,9 @@ function Recepies() {
                 name: "Strawberry Cheesecake",
                 url: picture,
                 time: "30 minutes",
-                tags: ["Strawberry", "America", "Dessert"],
+                tags: ["Strawberry", "American", "Dessert"],
                 ingredients: ["cream", "butter", "cheese", "egg", "vanilla", "strawberry"],
-                instructions: "1. Mix all ingredients together. \n2. Bake for 30 minutes. \n3. Enjoy!",
+                instructions: "1. Mix all ingredients together. \n\n\n2. Bake for 30 minutes. \n\n\n3. Enjoy!",
                 calories: 400,
                 level: "easy",
             }
@@ -109,15 +114,18 @@ function Recepies() {
                 <div className='card_info'>
                     {recipes.map((recipe) => (
                         <div className='recipeInfo'>
-                            <ul className='firstRow'>
-                                <li>Skill level: {recipe.level}</li>
-                            </ul>
-                            <ul className='secondRow'>
-                                <li>Time: {recipe.time}</li>
-                            </ul>
-                            <ul className='thirdRow'>
-                                <li>Calories: {recipe.calories}</li>
-                            </ul>
+                            <img src={skill_icon} width='30' height='30' />
+                            <p>
+                                {recipe.level}&emsp;&emsp;&emsp;
+                            </p>
+                            <img src={time_icon} width='20' height='20' />
+                            <p>
+                                {recipe.time} minutes&emsp;&emsp;
+                            </p>
+                            <img src={kcal_icon} width='20' height='20' />
+                            <p>
+                                {recipe.calories} kcal
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -130,9 +138,11 @@ function Recepies() {
                                         Ingredients
                                     </header>
                                 </section>
-                                {recipe.ingredients.map((ingredient) => (
-                                    <div className='ingredient'>{ingredient}</div>
-                                ))}
+                                <ul>
+                                    {recipe.ingredients.map((ingredient) => (
+                                        <li className='ingredient'>{ingredient}</li>
+                                    ))}
+                                </ul>
                             </div>
                             <div className='bodyright'>
                                 <section>
@@ -140,12 +150,14 @@ function Recepies() {
                                         Instructions
                                     </header>
                                 </section>
-                                <div className='instructions'>{recipe.instructions}</div>
+                                <div className='instructions'><p>{recipe.instructions}</p></div>
                             </div>
                         </>
                     ))}
                 </div>
+                <div class='break'></div>
             </div>
+            
         </>
     );
 }

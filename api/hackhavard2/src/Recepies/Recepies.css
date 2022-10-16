@@ -1,9 +1,39 @@
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:large;
+}
+
+.instructions {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    size: 16px;
+    font-size:large;
 }
 
 li {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    size: 16px;
+    font-size:large;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    padding-left: 2.3em;
+}
+header {
+    margin: 1em;
+}
+li:before {
+    content: " - ";
+    display: inline-block;
+    margin-left: 0.0em;
+    width: 1.0em;
+}
+
+.break {
+    margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 .card_entrees {
@@ -29,6 +59,7 @@ li {
     bottom: 10px;
     color: white;
     text-shadow: 2px 2px #f26522;
+    font-size: x-large;
 }
 
 .rating {
@@ -74,6 +105,11 @@ li {
     flex: 0 1 100%;
     margin-left: 25px;
 }
+
+img {
+    margin: 10px;
+    margin-top: -10px;
+  }
 
 .ingredientHeader {
     font-size: 20px;
