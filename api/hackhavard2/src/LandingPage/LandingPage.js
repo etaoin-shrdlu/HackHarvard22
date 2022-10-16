@@ -9,28 +9,7 @@ import './LandingPage.css';
 var global_meal = '';
 
 function makeSearch(country) {
-<<<<<<< HEAD
     window.location.replace('recepies?cuisine=' + country + '&meal=' + global_meal);   
-=======
-    window.location.pathname = 'recepies?cuisine=' + country + '&meal=' + global_meal;
-    let url_data = fetch(BACKEND_URL, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, cors, *same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-            "Content-Type": "application/json",
-            // "Content-Type": "application/x-www-form-urlencoded",
-        },
-        redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer", // no-referrer, *client
-        body: JSON.stringify({
-            'cuisine': country,
-            'meal': global_meal
-        }), // body data type must match "Content-Type" header
-    });
-
->>>>>>> 02dd646a04416d1a52e1e093cf4e365222da70c2
 }
 
 function setMealCategory(meal) {
