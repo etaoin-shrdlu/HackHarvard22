@@ -48,7 +48,7 @@ function LandingPage() {
                 </select>
             </div>
             <div className='search__btn'>
-                <button onClick={() => alert("need api")}>Search</button>
+                <button onClick={() => alert("create a function and pass data in")}>Search</button>
             </div>
         </>
     );
