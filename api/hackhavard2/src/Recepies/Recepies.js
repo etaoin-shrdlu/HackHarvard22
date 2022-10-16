@@ -3,7 +3,7 @@ import picture from '../strawberry.png';
 import './Recepies.css';
 import { useLocation } from "react-router-dom";
 
-var recipes; //last minute change
+var recipes; //last-minute change
 
 function Recepies() {
     /*let [recipes, setRecipes] = useState([
@@ -21,7 +21,6 @@ function Recepies() {
 
     const BACKEND_URL = 'http://127.0.0.1:8000/';
 
-
     const search = useLocation().search;
     let cuisine = new URLSearchParams(search).get('cuisine');
     let meal_category = new URLSearchParams(search).get('meal');
@@ -30,18 +29,20 @@ function Recepies() {
     console.log(meal_category)
 
     let url_data = null;
-
+    
     recipes = 
-            [{
+        [
+            {
                 name: "Strawberry Cheesecake",
                 url: picture,
                 time: "30 minutes",
                 tags: ["Strawberry", "America", "Dessert"],
                 ingredients: ["cream", "butter", "cheese", "egg", "vanilla", "strawberry"],
-                instructions: "1. Mix all ingredients together. 2. Bake for 30 minutes. 3. Enjoy!",
+                instructions: "1. Mix all ingredients together. \n2. Bake for 30 minutes. \n3. Enjoy!",
                 calories: 400,
                 level: "easy",
-            }] // default value for debbugging
+            }
+        ] // default value for debbugging
     
     fetch(BACKEND_URL, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -50,7 +51,7 @@ function Recepies() {
         credentials: "include", // include, *same-origin, omit
         headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin:': '*'
+            "Access-Control-Allow-Origin": "*"
             // "Content-Type": "application/x-www-form-urlencoded",
         },
         redirect: "follow", // manual, *follow, error
@@ -109,7 +110,7 @@ function Recepies() {
                     {recipes.map((recipe) => (
                         <div className='recipeInfo'>
                             <ul className='firstRow'>
-                                <li>Level: {recipe.level}</li>
+                                <li>Skill level: {recipe.level}</li>
                             </ul>
                             <ul className='secondRow'>
                                 <li>Time: {recipe.time}</li>
