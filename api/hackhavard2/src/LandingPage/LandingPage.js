@@ -92,8 +92,8 @@ function Card(props) {
 
     return (
         <>
-            <div className='overall__card__clicked' onclick={buttonSwitch}>
-                <div className='card'>
+            <div className='overall__card' onclick={buttonSwitch}>
+                <div className='card__unclicked'>
                     <div className='card__body'>
                         <img className='card__image' src={props.img} />
                         <h2 className='card__title'>{props.title}</h2>
