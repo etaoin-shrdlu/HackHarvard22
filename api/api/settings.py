@@ -54,7 +54,7 @@ ROOT_URLCONF = 'api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['./hackhavard2'],
+        'DIRS': ['hackhavard2'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
