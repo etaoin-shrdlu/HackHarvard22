@@ -44,10 +44,12 @@
 }
 
 .google {
+    background-color: aliceblue;
     background-image: url("https://img.icons8.com/color/48/000000/google-logo.png");
 }
 
 .facebook {
+    background-color: aliceblue;
     background-image: url("https://img.icons8.com/color/48/000000/facebook-new.png");
 }
 
