@@ -27,7 +27,7 @@ function makeSearch(country) {
             'meal': global_meal
         }), // body data type must match "Content-Type" header
     });
-    
+
 }
 
 function setMealCategory(meal) {
@@ -57,7 +57,7 @@ function LandingPage() {
                     img={appetizers}
                     title='Appetizers'
                     onclick={setMealCategory('side')}
-                    description='Appetizers are a great way to get your daily dose of vegetables. They are also a great way to get your daily dose of vegetables.'
+                    description='Appetizers are small dishes served before a meal. They are meant to whet the appetite and stimulate the taste buds of yours!'
 
                 />
 
@@ -65,14 +65,14 @@ function LandingPage() {
                     img={entrees}
                     title='Entrees'
                     onclick={setMealCategory('entree')}
-                    description='Entrees are the heart of a meal, and the most important bit of food! '
+                    description='Entrees are the heart of a meal, and the most important bit of food! This is where you will spend most of your time and energy!'
                 />
 
                 <Card
                     img={desserts}
                     title='Desserts'
                     onclick={setMealCategory('dessert')}
-                    description='Desserts -- for when you want to enjoy life.'
+                    description='Desserts are the sweet ending to a meal. They are meant to be enjoyed after a meal, and are usually the most caloric part of a meal'
                 />
             </div>
             <div className='crusine__selection'>

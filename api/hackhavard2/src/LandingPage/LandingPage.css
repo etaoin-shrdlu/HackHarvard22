@@ -49,8 +49,8 @@ body {
     font-size: 1rem;
     margin: 1rem;
     border: 2px solid #d50000;
-    background: transparent;
     color: #d50000;
+    background-color: white;
     border-radius: 0.2rem;
     transition: background 200ms ease-in, color 200ms ease-in;
 }
