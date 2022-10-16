@@ -48,7 +48,7 @@ function Recepies() {
 
     return (
         <>
-            <div>
+            <div >
                 <div className="card_container">
                     {recipes.map((recipe) => (
 
@@ -96,10 +96,17 @@ function Recepies() {
                                         Ingredients
                                     </header>
                                 </section>
-                                <div className='ingredients'>{recipe.ingredients}</div>
+                                {recipe.ingredients.map((ingredient) => (
+                                    <div className='ingredient'>{ingredient}</div>
+                                ))}
                             </div>
                             <div className='bodyright'>
-                                <div className='instructions'>Instructions: {recipe.instructions}</div>
+                                <section>
+                                    <header className='instructionsHeader'>
+                                        Instructions
+                                    </header>
+                                </section>
+                                <div className='instructions'>{recipe.instructions}</div>
                             </div>
                         </>
                     ))}
