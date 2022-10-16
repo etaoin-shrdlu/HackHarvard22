@@ -16,6 +16,17 @@
     justify-content: center;
 }
 
+.card {
+    overflow: hidden;
+    box-shadow: 0 2px 20px #e1e5ee;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+}
+
 .card__unclicked {
     overflow: hidden;
     box-shadow: 0 2px 20px #e1e5ee;
@@ -72,11 +83,16 @@
     margin: 2rem;
 }
 
-.search__btn {
+.search__btn__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.search__btn {
+    -webkit-user-select: initial;
+    user-select: initial;
 }
 
 .search__btn button {
