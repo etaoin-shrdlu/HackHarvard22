@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import salad from '../salad2.png';
+import entrees from '../entrees.png';
+import desserts from '../desserts.png';
+import appetizers from '../appetizers.png';
+
 import './LandingPage.css';
 
 const BACKEND_URL = 'http://127.0.0.1:8000/';
@@ -51,7 +54,7 @@ function LandingPage() {
         <>
             <div className='wrapper'>
                 <Card
-                    img={salad}
+                    img={appetizers}
                     title='Appetizers'
                     onclick={setMealCategory('side')}
                     description='Appetizers are a great way to get your daily dose of vegetables. They are also a great way to get your daily dose of vegetables.'
@@ -59,14 +62,14 @@ function LandingPage() {
                 />
 
                 <Card
-                    img={salad}
+                    img={entrees}
                     title='Entrees'
                     onclick={setMealCategory('entree')}
                     description='Entrees are the heart of a meal, and the most important bit of food! '
                 />
 
                 <Card
-                    img={salad}
+                    img={desserts}
                     title='Desserts'
                     onclick={setMealCategory('dessert')}
                     description='Desserts -- for when you want to enjoy life.'
