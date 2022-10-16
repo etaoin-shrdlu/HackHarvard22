@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import picture from '../logo.png';
 import './Recepies.css';
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Recepies() {
     const [recipes, setRecipes] = useState([
@@ -9,7 +9,7 @@ function Recepies() {
             name: "Chicken Parmesan",
             url: picture,
             time: "30 minutes",
-            tags: ["chicken", "italian", "dinner"],
+            tags: ["Chicken", "Italian", "Dinner"],
             ingredients: ["chicken", "tomato sauce", "cheese", "pasta"],
             instructions: "1. Cook the chicken. 2. Cook the pasta. 3. Mix the chicken and pasta. 4. Add tomato sauce and cheese. 5. Enjoy!",
             calories: 500,
