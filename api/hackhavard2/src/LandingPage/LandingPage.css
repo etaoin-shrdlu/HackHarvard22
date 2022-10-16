@@ -21,32 +21,7 @@ body {
 }
 
 .card {
-<<<<<<< HEAD
-    overflow: hidden;
-    box-shadow: 0 2px 20px #e1e5ee;
-    border-radius: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: transform 200ms ease-in;
-}
-
-.card__unclicked {
-    overflow: hidden;
-    box-shadow: 0 2px 20px #e1e5ee;
-    border-radius: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: transform 200ms ease-in;
-}
-
-.card__clicked {
-=======
     font-family: 'Roboto', sans-serif;
->>>>>>> ce81521e5429f8830d5ce52e89c66622110fe00e
     overflow: hidden;
     box-shadow: 0 2px 20px #e1e5ee;
     border-radius: 0.2rem;
