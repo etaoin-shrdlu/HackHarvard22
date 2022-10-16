@@ -6,8 +6,8 @@ import './LandingPage.css';
 const BACKEND_URL = 'http://127.0.0.1:8000/';
 var global_meal = '';
 
-function makeSearch(country, data) {
-    window.location.pathname = 'recepies?cuisine=' + country + '&categories=' + data;
+function makeSearch(country) {
+    window.location.pathname = 'recepies?cuisine=' + country + '&meal=' + global_meal;
     let url_data = fetch(BACKEND_URL, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, cors, *same-origin
@@ -21,7 +21,7 @@ function makeSearch(country, data) {
         referrer: "no-referrer", // no-referrer, *client
         body: JSON.stringify({
             'cuisine': country,
-            'data': data
+            'meal': global_meal
         }), // body data type must match "Content-Type" header
     });
     
@@ -81,7 +81,7 @@ function LandingPage() {
                 </select>
             </div>
             <div className='search__btn__container'>
-                <button className='search__btn' onClick={() => makeSearch(country, data)}>Search</button>
+                <button className='search__btn' onClick={() => makeSearch(country)}>Search</button>
             </div>
         </>
     );
@@ -99,14 +99,14 @@ function Card(props) {
 
     return (
         <>
-            <div className='overall__card' onclick={setCategory}>
+            <div className='overall__card'>
                 <div className='card__unclicked'>
                     <div className='card__body'>
                         <img className='card__image' src={props.img} />
                         <h2 className='card__title'>{props.title}</h2>
                         <p className='card__description'>{props.description}</p>
                     </div>
-                    <div style="display:none" className='checkbox__container'>
+                    <div className='checkbox__container'>
                         <input
                             className='card__checkbox'
                             type="checkbox"
