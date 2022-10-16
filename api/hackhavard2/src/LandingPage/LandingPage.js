@@ -9,7 +9,28 @@ import './LandingPage.css';
 var global_meal = '';
 
 function makeSearch(country) {
+<<<<<<< HEAD
     window.location.replace('recepies?cuisine=' + country + '&meal=' + global_meal);   
+=======
+    window.location.pathname = 'recepies?cuisine=' + country + '&meal=' + global_meal;
+    let url_data = fetch(BACKEND_URL, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+            "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify({
+            'cuisine': country,
+            'meal': global_meal
+        }), // body data type must match "Content-Type" header
+    });
+
+>>>>>>> 02dd646a04416d1a52e1e093cf4e365222da70c2
 }
 
 function setMealCategory(meal) {
@@ -39,7 +60,7 @@ function LandingPage() {
                     img={appetizers}
                     title='Appetizers'
                     onclick={setMealCategory('side')}
-                    description='Appetizers are a great way to get your daily dose of vegetables. They are also a great way to get your daily dose of vegetables.'
+                    description='Appetizers are small dishes served before a meal. They are meant to whet the appetite and stimulate the taste buds of yours!'
 
                 />
 
@@ -47,14 +68,14 @@ function LandingPage() {
                     img={entrees}
                     title='Entrees'
                     onclick={setMealCategory('entree')}
-                    description='Entrees are the heart of a meal, and the most important bit of food! '
+                    description='Entrees are the heart of a meal, and the most important bit of food! This is where you will spend most of your time and energy!'
                 />
 
                 <Card
                     img={desserts}
                     title='Desserts'
                     onclick={setMealCategory('dessert')}
-                    description='Desserts -- for when you want to enjoy life.'
+                    description='Desserts are the sweet ending to a meal. They are meant to be enjoyed after a meal, and are usually the most caloric part of a meal'
                 />
             </div>
             <div className='crusine__selection'>
