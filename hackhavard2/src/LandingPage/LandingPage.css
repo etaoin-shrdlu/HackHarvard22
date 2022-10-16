@@ -52,7 +52,10 @@
     transform: scale(1.02);
 }
 
-.card:hover .card__btn {
-    background-color: #d50000;
-    color: white;
+.crusine__selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
 }
