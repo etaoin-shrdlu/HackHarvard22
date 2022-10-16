@@ -14,7 +14,7 @@ function Header() {
                         src={MyLogo}
                         alt="Recipe Tinder"
                     />
-                    <font face='Gotham Rounded' size='6.5'><b>recipe finder</b></font>
+                    <font face='Gotham Rounded' size='6.9'><b>recipe finder</b></font>
                 </div>
                 <HiOutlineQuestionMarkCircle className="header__icon" size={30} />
             </div>
