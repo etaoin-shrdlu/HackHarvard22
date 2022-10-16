@@ -30,6 +30,7 @@ body {
     justify-content: space-between;
     cursor: pointer;
     transition: transform 200ms ease-in;
+    background-color: #ffefe0;
 }
 
 .card__title {

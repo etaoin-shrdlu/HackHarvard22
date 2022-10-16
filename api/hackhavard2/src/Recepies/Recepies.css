@@ -35,9 +35,9 @@
 }
 
 .recipeInfo {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 0;
-    padding-top: 0;
+    padding-top: 0px;
     display: flex;
 }
 
@@ -67,5 +67,19 @@
 }
 
 .ingredientHeader {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 20%;
+    display: block;
+}
+
+.ingredient {
+    padding-left: 20%;
+}
+
+.instructionsHeader {
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
     display: block;
 }

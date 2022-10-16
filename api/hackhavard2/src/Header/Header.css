@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f26522;
-
+    background-color: white
 }
 
 img {
@@ -13,4 +12,9 @@ img {
 
 .header__icon {
     padding: 20px;
+}
+
+font {
+    letter-spacing: 1px;
+    
 }
