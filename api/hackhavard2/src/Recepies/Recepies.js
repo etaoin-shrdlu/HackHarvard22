@@ -33,13 +33,13 @@ function Recepies() {
 
     recipes = 
             [{
-                name: "Chicken Parmesan",
+                name: "Strawberry Cheesecake",
                 url: picture,
                 time: "30 minutes",
-                tags: ["Chicken", "Italian", "Dinner"],
-                ingredients: ["chicken", "tomato sauce", "cheese", "pasta"],
-                instructions: "1. Cook the chicken. 2. Cook the pasta. 3. Mix the chicken and pasta. 4. Add tomato sauce and cheese. 5. Enjoy!",
-                calories: 500,
+                tags: ["Strawberry", "America", "Dessert"],
+                ingredients: ["cream", "butter", "cheese", "egg", "vanilla", "strawberry"],
+                instructions: "1. Mix all ingredients together. 2. Bake for 30 minutes. 3. Enjoy!",
+                calories: 400,
                 level: "easy",
             }] // default value for debbugging
     
