@@ -66,3 +66,15 @@
     justify-content: center;
     align-items: center;
 }
+
+.search__btn button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid black;
+    background: transparent;
+    color: black;
+    border-radius: 0.2rem;
+    transition: background 200ms ease-in, color 200ms ease-in;
+}
