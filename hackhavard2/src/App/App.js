@@ -7,7 +7,7 @@ import Questions from '../Questions/Questions';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import Entrees from '../Entrees/Entrees';
+import Entrees from '../Recepies/Recepies';
 import Desserts from '../Dessert/Dessert';
 import LandingPage from '../LandingPage/LandingPage';
 import Appetizers from '../Appetizers/Appetizers';
@@ -21,9 +21,9 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/question" element={<Questions />} />
-          <Route path="/Entrees" element={<Entrees />} />
-          <Route path="/Appetizers" element={<Appetizers />} />
-          <Route path="/Desserts" element={<Desserts />} />
+          <Route path="/Entrees" element={<Recepies />} />
+          <Route path="/Appetizers" element={<Recepies />} />
+          <Route path="/Desserts" element={<Recepies />} />
           <Route path="/All" element={<AllType />} />
         </Routes>
       </Router>
