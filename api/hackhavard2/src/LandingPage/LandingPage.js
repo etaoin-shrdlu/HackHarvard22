@@ -3,31 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import salad from '../salad2.png';
 import './LandingPage.css';
 
-const BACKEND_URL = 'http://127.0.0.1:8000/'
-
-function makeSearch(country, data) {
-    let url_data = fetch(BACKEND_URL, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "cors", // no-cors, cors, *same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-            "Content-Type": "application/json",
-            // "Content-Type": "application/x-www-form-urlencoded",
-        },
-        redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer", // no-referrer, *client
-        body: JSON.stringify({
-            'cuisine': country,
-            'data': data
-        }), // body data type must match "Content-Type" header
-    })
-    this.props.history.push('/recepies/?' + url_data)
-}
-
 function LandingPage() {
     let countries = [{ label: 'Indian', value: 'indian' }, { label: 'America', value: 'america' }, { label: 'Vietnamese', value: 'vietnamese' }, { label: 'Mexican', value: 'mexican' }];
-    let [country, setCountry] = useState("Select cuisine");
+    let [country, setCountry] = useState("Select cruisne");
     const [data, setData] = useState([]);
 
     let addOrRemove = (e) => {
@@ -70,7 +48,7 @@ function LandingPage() {
                 </select>
             </div>
             <div className='search__btn'>
-                <button onClick={() => makeSearch(country, data)}>Search</button>
+                <button onClick={() => alert("create a function and pass data in")}>Search</button>
             </div>
         </>
     );
@@ -86,14 +64,10 @@ function Card(props) {
         }
     };
 
-    const buttonSwitch = () => {
-        
-    }
-
     return (
         <>
-            <div className='overall__card' onclick={buttonSwitch}>
-                <div className='card__unclicked'>
+            <div className='overall__card'>
+                <div className='card'>
                     <div className='card__body'>
                         <img className='card__image' src={props.img} />
                         <h2 className='card__title'>{props.title}</h2>
