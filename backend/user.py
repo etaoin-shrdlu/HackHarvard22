@@ -6,12 +6,12 @@ from database import DatabaseConstants
 from food import Restriction_Categories, Recipe_Categories
 
 class User:
-    def __init__(self, restrictions, cuisine : str):
+    def __init__(self, restrictions, cuisine : str, recipe_category=Recipe_Categories.ALL):
         """TODO: Pull from Firebase
         """
         self.restrictions = restrictions
         self.cuisine = cuisine
-        self.recipe_category = Recipe_Categories.ALL
+        self.recipe_category = recipe_category
         self.saved_recipies = []
         self.update_recipe_prefs()
 
