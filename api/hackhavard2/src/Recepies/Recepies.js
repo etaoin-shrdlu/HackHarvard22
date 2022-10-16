@@ -24,6 +24,9 @@ function Recepies() {
     let cuisine = new URLSearchParams(search).get('cuisine');
     let meal_category = new URLSearchParams(search).get('meal');
 
+    console.log(cuisine);
+    console.log(meal_category)
+
     let url_data = fetch(BACKEND_URL, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, cors, *same-origin
