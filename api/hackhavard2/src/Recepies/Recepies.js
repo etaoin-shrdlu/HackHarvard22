@@ -3,8 +3,10 @@ import picture from '../logo.png';
 import './Recepies.css';
 import { useLocation } from "react-router-dom";
 
+var recipes; //last minute change
+
 function Recepies() {
-    const [recipes, setRecipes] = useState([
+    /*let [recipes, setRecipes] = useState([
         {
             name: "Chicken Parmesan",
             url: picture,
@@ -15,7 +17,7 @@ function Recepies() {
             calories: 500,
             level: "easy",
         },
-    ]);
+    ]);*/
 
     const BACKEND_URL = 'http://127.0.0.1:8000/';
 
@@ -28,6 +30,19 @@ function Recepies() {
     console.log(meal_category)
 
     let url_data = null;
+
+    recipes = 
+            [{
+                name: "Chicken Parmesan",
+                url: picture,
+                time: "30 minutes",
+                tags: ["Chicken", "Italian", "Dinner"],
+                ingredients: ["chicken", "tomato sauce", "cheese", "pasta"],
+                instructions: "1. Cook the chicken. 2. Cook the pasta. 3. Mix the chicken and pasta. 4. Add tomato sauce and cheese. 5. Enjoy!",
+                calories: 500,
+                level: "easy",
+            }] // default value for debbugging
+    
     fetch(BACKEND_URL, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, cors, *same-origin
@@ -35,6 +50,7 @@ function Recepies() {
         credentials: "include", // include, *same-origin, omit
         headers: {
             "Content-Type": "application/json",
+            'Access-Control-Allow-Origin:': '*'
             // "Content-Type": "application/x-www-form-urlencoded",
         },
         redirect: "follow", // manual, *follow, error
@@ -45,9 +61,20 @@ function Recepies() {
         })
     }).then((response) => {
         url_data = response
+        recipes = 
+            [{
+                name: "Chicken Parmesan",
+                url: picture,
+                time: "30 minutes",
+                tags: ["Chicken", "Italian", "Dinner"],
+                ingredients: ["chicken", "tomato sauce", "cheese", "pasta"],
+                instructions: "1. Cook the chicken. 2. Cook the pasta. 3. Mix the chicken and pasta. 4. Add tomato sauce and cheese. 5. Enjoy!",
+                calories: 500,
+                level: "easy",
+            }]
         console.log('SUCCESS')
         console.log(url_data)
-    });
+        });
 
     
 
