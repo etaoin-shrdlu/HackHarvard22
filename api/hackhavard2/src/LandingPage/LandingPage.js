@@ -4,6 +4,7 @@ import salad from '../salad2.png';
 import './LandingPage.css';
 
 const BACKEND_URL = 'http://127.0.0.1:8000/';
+var global_meal = '';
 
 function makeSearch(country, data) {
     window.location.pathname = 'recepies?cuisine=' + country + '&categories=' + data;
@@ -24,6 +25,10 @@ function makeSearch(country, data) {
         }), // body data type must match "Content-Type" header
     });
     
+}
+
+function setMealCategory(meal) {
+    global_meal = meal;
 }
 
 function LandingPage() {
