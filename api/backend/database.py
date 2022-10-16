@@ -1,7 +1,12 @@
 import csv
-
+import sys
+sys.path.append("../")
+from dataclasses import replace
+from genericpath import exists
+from numpy import append
 from backend.recipe import Recipe
 from backend.food import Recipe_Categories, Restriction_Categories
+
 
 class Database:
     def __init__(self):
@@ -13,18 +18,23 @@ class Database:
             next(recipies_file) # Skip the first line
             for recipe in recipies_file:
                 yield Recipe(
-                    name=recipe[0],
-                    allergens=Restriction_Categories.strs_to_enum(recipe[1]),
-                    description=recipe[2],
-                    imgs=..., #TODO
-                    ingredients=recipe[3][1:-1].split(';'),
-                    directions=recipe[4][1:-1].replace(';', '\n'),
-                    calories=int(recipe[5]),
-                    prep_time=int(recipe[6]),
-                    category=Recipe_Categories.str_to_enum(recipe[7]),
-                    cuisine=recipe[8],
-                    skill=recipe[9]
+                    name = recipe[0],
+                    allergens = Restriction_Categories.strs_to_enum(recipe[1]),
+                    description = recipe[2],
+                    imgs = [],
+                    ingredients = recipe[3][1:-1].split(';'),
+                    directions = recipe[4][1:-1].replace(';', '\n'),
+                    calories = int(recipe[5]),
+                    prep_time = int(recipe[6]),
+                    category = Recipe_Categories.str_to_enum(recipe[7]),
+                    cuisine = recipe[8],
+                    skill = recipe[9]
                 )
+                imgname = Recipe.name.replace(" ", "").lower() + "_"
+                i = 1
+                while exists(imgname + str(i)):
+                    Recipe.imgs.append(imgname + str(i))
+                    i += 1
 
 class DatabaseConstants:
     ALL_RECIPIES = Database().recipies
