@@ -86,9 +86,13 @@ function Card(props) {
         }
     };
 
+    const buttonSwitch = () => {
+        
+    }
+
     return (
         <>
-            <div className='overall__card'>
+            <div className='overall__card__clicked' onclick={buttonSwitch}>
                 <div className='card'>
                     <div className='card__body'>
                         <img className='card__image' src={props.img} />
