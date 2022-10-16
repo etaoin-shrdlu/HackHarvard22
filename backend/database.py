@@ -26,6 +26,9 @@ class Database:
                     skill=recipe[9]
                 )
 
+class DatabaseConstants:
+    ALL_RECIPIES = Database().recipies
+
 if __name__ == '__main__':
     d = Database()
     for x in d.recipe_generator():

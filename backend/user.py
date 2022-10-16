@@ -1,17 +1,17 @@
 from recipe import Recipe
 from enum import Enum
-from database import Database
-ALL_RECIPIES = Database().recipies
+from database import DatabaseConstants
+
 
 from food import Restriction_Categories, Recipe_Categories
 
 class User:
-    def __init__(self, restrictions, cuisine : str):
+    def __init__(self, restrictions, cuisine : str, recipe_category=Recipe_Categories.ALL):
         """TODO: Pull from Firebase
         """
         self.restrictions = restrictions
         self.cuisine = cuisine
-        self.recipe_category = Recipe_Categories.ALL
+        self.recipe_category = recipe_category
         self.saved_recipies = []
         self.update_recipe_prefs()
 
@@ -36,7 +36,7 @@ class User:
         return priority
 
     def update_recipe_prefs(self):
-        self.recipies_sorted = sorted((recipe for recipe in ALL_RECIPIES if self.get_priority(recipe) != -2.0), key=lambda recipe : self.get_priority(recipe))
+        self.recipies_sorted = sorted((recipe for recipe in DatabaseConstants.ALL_RECIPIES if self.get_priority(recipe) != -2.0), key=lambda recipe : self.get_priority(recipe))
         
         #if self.recipe_category == Recipe_Categories.ALL:
         #    self.recipies_sorted = sorted(ALL_RECIPIES, key=lambda recipe : self.get_priority(recipe))
