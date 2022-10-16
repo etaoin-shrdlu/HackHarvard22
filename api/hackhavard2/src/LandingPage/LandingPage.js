@@ -33,7 +33,7 @@ function setMealCategory(meal) {
 
 function LandingPage() {
     let countries = [{ label: 'Indian', value: 'indian' }, { label: 'America', value: 'america' }, { label: 'Vietnamese', value: 'vietnamese' }, { label: 'Mexican', value: 'mexican' }];
-    let [country, setCountry] = useState("Select cuisine");
+    let [country, setCountry] = useState("Select cruisne");
     const [data, setData] = useState([]);
     const [selected_category, setCategory] = useState("");
 
@@ -100,7 +100,7 @@ function Card(props) {
     return (
         <>
             <div className='overall__card'>
-                <div className='card__unclicked'>
+                <div className='card'>
                     <div className='card__body'>
                         <img className='card__image' src={props.img} />
                         <h2 className='card__title'>{props.title}</h2>
