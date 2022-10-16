@@ -12,6 +12,7 @@ import Desserts from '../Dessert/Dessert';
 import LandingPage from '../LandingPage/LandingPage';
 import Appetizers from '../Appetizers/Appetizers';
 import AllType from '../AllType/AllType';
+import LoginForm from '../Login/LoginForm';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Header />
       <Router>
         <Routes>
+          <Route path="/login" element={<LoginForm />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/question" element={<Questions />} />
           <Route path="/Entrees" element={<Entrees />} />
