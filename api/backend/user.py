@@ -1,6 +1,6 @@
-from recipe import Recipe
+from backend.recipe import Recipe
 from enum import Enum
-from database import DatabaseConstants
+from backend.database import DatabaseConstants
 
 
 from food import Restriction_Categories, Recipe_Categories

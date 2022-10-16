@@ -1,4 +1,4 @@
-from food import Restriction_Categories, Recipe_Categories
+from backend.food import Restriction_Categories, Recipe_Categories
 
 class Recipe:
     def __init__(self, name : str, description : str, imgs, allergens, ingredients, directions, calories : int, prep_time : int, category : Recipe_Categories, cuisine : str, skill : str):

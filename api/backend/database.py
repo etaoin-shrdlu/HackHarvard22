@@ -1,7 +1,7 @@
 import csv
 
-from recipe import Recipe
-from food import Recipe_Categories, Restriction_Categories
+from backend.recipe import Recipe
+from backend.food import Recipe_Categories, Restriction_Categories
 
 class Database:
     def __init__(self):

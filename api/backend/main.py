@@ -1,8 +1,8 @@
 #python3 -m pip install firebase-admin
 import json
 
-from user import User
-from food import Recipe_Categories, Restriction_Categories
+from backend.user import User
+from backend.food import Recipe_Categories, Restriction_Categories
 
 import firebase_admin
 from firebase_admin import credentials, firestore
