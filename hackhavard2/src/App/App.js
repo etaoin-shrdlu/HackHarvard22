@@ -39,10 +39,10 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/question" element={<Questions />} />
-          <Route path="/entrees" element={<Entrees />} />
-          <Route path="/appetizers" element={<Appetizers />} />
-          <Route path="/desserts" element={<Desserts />} />
-          <Route path="/all" element={<AllType />} />
+          <Route path="/Entrees" element={<Entrees />} />
+          <Route path="/Appetizers" element={<Appetizers />} />
+          <Route path="/Desserts" element={<Desserts />} />
+          <Route path="/All" element={<AllType />} />
         </Routes>
       </Router>
     </div>
