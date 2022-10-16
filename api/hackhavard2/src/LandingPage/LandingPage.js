@@ -106,13 +106,6 @@ function Card(props) {
                         <h2 className='card__title'>{props.title}</h2>
                         <p className='card__description'>{props.description}</p>
                     </div>
-                    <div className='checkbox__container'>
-                        <input
-                            className='card__checkbox'
-                            type="checkbox"
-                            onChange={() => addOrRemove(props.title)}
-                        />
-                    </div>
                 </div>
             </div>
         </>
