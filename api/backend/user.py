@@ -1,9 +1,9 @@
-from backend.recipe import Recipe
 from enum import Enum
+
+
+from backend.recipe import Recipe
 from backend.database import DatabaseConstants
-
-
-from food import Restriction_Categories, Recipe_Categories
+from backend.food import Restriction_Categories, Recipe_Categories
 
 class User:
     def __init__(self, restrictions, cuisine : str, recipe_category=Recipe_Categories.ALL):

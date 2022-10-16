@@ -8,7 +8,7 @@ class Database:
         self.recipies = [recipe for recipe in self.recipe_generator()]
 
     def recipe_generator(self):
-        with open('./recipes.csv') as f:
+        with open('./backend/recipes.csv') as f:
             recipies_file = csv.reader(f)
             next(recipies_file) # Skip the first line
             for recipe in recipies_file:
